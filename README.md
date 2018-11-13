@@ -26,3 +26,20 @@
    ```
    For more information, see the
    [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+
+## 常用指令别名
+```
+gst='git status'
+gaa='git add --all'
+gcmsg='git commit -m'
+
+gcb='git checkout -b'
+gl='git pull'
+gp='git push'
+
+gstaa='git stash apply'
+gstc='git stash clear'
+gstl='git stash list'
+
+glgg='git log --graph'
+```
