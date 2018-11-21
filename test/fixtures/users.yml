@@ -2,3 +2,7 @@ chanweiyan:
   name: Weiyan Chan
   email: chanweiyan007@gmail.com
   password_digest: <%= User.digest('password') %>
+cwy007:
+  name: github username
+  email: cwy007@gmail.com
+  password_digest: <%= User.digest('password') %>
