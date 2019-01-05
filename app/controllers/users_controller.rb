@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy] # 要求先登录
   before_action :correct_user, only: [:edit, :update] # 只允许用户修改自己的信息
+  before_action :admin_user, only: :destroy
 
   def index
     @users = User.paginate(page: params[:page])
@@ -62,5 +63,9 @@ class UsersController < ApplicationController
     def correct_user # 对的用户
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user) # id 所对应的用户，与当前用户 current_user 不一致时，请求会被重定向回 root_url
+    end
+
+    def admin_user
+      redirect_to root_url unless current_user.admin?
     end
 end
